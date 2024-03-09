@@ -8,20 +8,310 @@
 	"item": [
 		{
 			"name": "get public users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('check status code', ()=>{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"const jsonSchema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"array\",\r",
+							"  \"items\": [\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    }\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.test('validate json schema', ()=>{\r",
+							"    pm.expect(tv4.validate(jsonData, jsonSchema)).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://gorest.co.in/public/v2/users",
-					"protocol": "https",
+					"raw": "{{api_url}}/users",
 					"host": [
-						"gorest",
-						"co",
-						"in"
+						"{{api_url}}"
 					],
 					"path": [
-						"public",
-						"v2",
 						"users"
 					]
 				}
@@ -30,13 +320,69 @@
 		},
 		{
 			"name": "create user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var name = pm.variables.replaceIn('{{$randomFullName}}');\r",
+							"pm.environment.set('u_name', name);\r",
+							"\r",
+							"var gender = 'male';\r",
+							"pm.environment.set('u_gender', gender);\r",
+							"\r",
+							"var email = pm.variables.replaceIn('{{$randomEmail}}');\r",
+							"pm.environment.set('u_email', email);\r",
+							"\r",
+							"var status = pm.variables.replaceIn('active');\r",
+							"pm.environment.set('u_status', status);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('validate status code', ()=>{\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test('validate name of the user', ()=>{\r",
+							"    pm.expect(jsonData.name).to.be.eql(pm.environment.get('u_name'));\r",
+							"    pm.environment.unset('u_name');\r",
+							"});\r",
+							"\r",
+							"pm.test('validate user email', ()=>{\r",
+							"    pm.expect(jsonData.email).to.be.eql(pm.environment.get('u_email'));\r",
+							"    pm.environment.unset('u_email');\r",
+							"});\r",
+							"\r",
+							"pm.test('validate user gender', ()=>{\r",
+							"    pm.expect(jsonData.gender).to.be.eql(pm.environment.get('u_gender'));\r",
+							"    pm.environment.unset('u_gender');\r",
+							"})\r",
+							"\r",
+							"pm.test('validate status of user', ()=>{\r",
+							"    pm.expect(jsonData.status).to.be.eql(pm.environment.get('u_status'));\r",
+							"    pm.environment.unset('u_status');\r",
+							"});\r",
+							"\r",
+							"pm.environment.set('u_id', jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
+							"value": "{{gorest_api_token}}",
 							"type": "string"
 						}
 					]
@@ -58,19 +404,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"name\":\"Tenali Ramakrishna 1\", \"gender\":\"male\", \"email\":\"tenali.ramakrishna@150ce.com\", \"status\":\"active\"}"
+					"raw": "{\"name\":\"{{u_name}}\", \"gender\":\"{{u_gender}}\", \"email\":\"{{u_email}}\", \"status\":\"{{u_status}}\"}"
 				},
 				"url": {
-					"raw": "https://gorest.co.in/public/v2/users",
-					"protocol": "https",
+					"raw": "{{api_url}}/users",
 					"host": [
-						"gorest",
-						"co",
-						"in"
+						"{{api_url}}"
 					],
 					"path": [
-						"public",
-						"v2",
 						"users"
 					]
 				}
@@ -79,13 +420,313 @@
 		},
 		{
 			"name": "users list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('validate status code', ()=>{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('validate json schema', ()=>{\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const jsonSchema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"array\",\r",
+							"  \"items\": [\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    },\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"gender\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"gender\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    }\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.expect(tv4.validate(jsonData, jsonSchema)).to.be.true;\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
+							"value": "{{gorest_api_token}}",
 							"type": "string"
 						}
 					]
@@ -106,16 +747,11 @@
 					}
 				],
 				"url": {
-					"raw": "https://gorest.co.in/public/v2/users",
-					"protocol": "https",
+					"raw": "{{api_url}}/users",
 					"host": [
-						"gorest",
-						"co",
-						"in"
+						"{{api_url}}"
 					],
 					"path": [
-						"public",
-						"v2",
 						"users"
 					]
 				}
@@ -124,13 +760,55 @@
 		},
 		{
 			"name": "update user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var name = pm.variables.replaceIn('{{$randomFullName}}');\r",
+							"pm.environment.set('u_name', name);\r",
+							"\r",
+							"var email = pm.variables.replaceIn('{{$randomEmail}}');\r",
+							"pm.environment.set('u_email', email);\r",
+							"\r",
+							"var status = 'active';\r",
+							"pm.environment.set('u_status', status);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test('validate name of the user', ()=>{\r",
+							"    pm.expect(jsonData.name).to.be.eql(pm.environment.get('u_name'));\r",
+							"    pm.environment.unset('u_name');\r",
+							"});\r",
+							"\r",
+							"pm.test('validate user email', ()=>{\r",
+							"    pm.expect(jsonData.email).to.be.eql(pm.environment.get('u_email'));\r",
+							"    pm.environment.unset('u_email');\r",
+							"});\r",
+							"\r",
+							"pm.test('validate user status', ()=>{\r",
+							"    pm.expect(jsonData.status).to.be.eql(pm.environment.get('u_status'));\r",
+							"    pm.environment.unset('u_status');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
+							"value": "{{gorest_api_token}}",
 							"type": "string"
 						}
 					]
@@ -152,21 +830,489 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"name\":\"John Kattegath\", \"email\":\"john123@g.com\", \"status\":\"inactive\"}"
+					"raw": "{\"name\":\"{{u_name}}\", \"email\":\"{{u_email}}\", \"status\":\"{{u_status}}\"}"
 				},
 				"url": {
-					"raw": "https://gorest.co.in/public/v2/users/6763564",
-					"protocol": "https",
+					"raw": "{{api_url}}/users/{{u_id}}",
 					"host": [
-						"gorest",
-						"co",
-						"in"
+						"{{api_url}}"
 					],
 					"path": [
-						"public",
-						"v2",
 						"users",
-						"6763564"
+						"{{u_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create post for a user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var title = \"Lorem Ipsum \"+pm.variables.replaceIn('{{$randomAlphaNumaric}}')+\" \"+pm.variables.replaceIn('{{$randomInt}}');\r",
+							"pm.environment.set('p_title', title);\r",
+							"\r",
+							"var body = \"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,\";\r",
+							"pm.environment.set('p_body', body);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test('validate the title', ()=>{\r",
+							"    pm.expect(jsonData.title).to.be.eql(pm.environment.get('p_title'));\r",
+							"    pm.environment.unset('p_title');\r",
+							"});\r",
+							"\r",
+							"pm.test('validate body', ()=>{\r",
+							"    pm.expect(jsonData.body).to.be.eql(pm.environment.get('p_body'));\r",
+							"    pm.environment.unset('p_body');\r",
+							"});\r",
+							"\r",
+							"pm.environment.set('p_id', jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gorest_api_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"{{p_title}}\",\r\n    \"body\": \"{{p_body}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/users/{{u_id}}/posts",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"users",
+						"{{u_id}}",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list posts for a user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('validate status code', ()=>{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('validate json schema', ()=>{\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const jsonSchema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"array\",\r",
+							"  \"items\": [\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"user_id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"title\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"body\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"user_id\",\r",
+							"        \"title\",\r",
+							"        \"body\"\r",
+							"      ]\r",
+							"    }\r",
+							"  ]\r",
+							"};\r",
+							"    pm.expect(tv4.validate(jsonData, jsonSchema)).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gorest_api_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/users/{{u_id}}/posts",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"users",
+						"{{u_id}}",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create comment for a post",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var name = pm.variables.replaceIn('{{$randomFullName}}');\r",
+							"pm.environment.set('c_name', name);\r",
+							"\r",
+							"\r",
+							"var email = pm.variables.replaceIn('{{$randomEmail}}');\r",
+							"pm.environment.set('c_email', email);\r",
+							"\r",
+							"var body = \"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,\";\r",
+							"pm.environment.set('c_body', body);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test('validate commentator name', ()=>{\r",
+							"    pm.expect(jsonData.name).to.be.eql(pm.environment.get('c_name'));\r",
+							"    pm.environment.unset('c_name');\r",
+							"});\r",
+							"\r",
+							"pm.test('validate commentator email', ()=>{\r",
+							"    pm.expect(jsonData.email).to.be.eql(pm.environment.get('c_email'));\r",
+							"    pm.environment.unset('c_email');\r",
+							"});\r",
+							"\r",
+							"pm.test('validate comment body', ()=>{\r",
+							"    pm.expect(jsonData.body).to.be.eql(pm.environment.get('c_body'));\r",
+							"    pm.environment.unset('c_body');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gorest_api_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{c_name}}\",\r\n    \"email\": \"{{c_email}}\",\r\n    \"body\": \"{{c_body}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/posts/{{p_id}}/comments",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"posts",
+						"{{p_id}}",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list comments for a post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('validate status code', ()=>{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('validate json schema', ()=>{\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const jsonSchema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"array\",\r",
+							"  \"items\": [\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"post_id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"email\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"body\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"post_id\",\r",
+							"        \"name\",\r",
+							"        \"email\",\r",
+							"        \"body\"\r",
+							"      ]\r",
+							"    }\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.expect(tv4.validate(jsonData, jsonSchema)).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gorest_api_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/posts/{{p_id}}/comments",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"posts",
+						"{{p_id}}",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create todo for a user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var title = \"Lorem Ipsum \"+pm.variables.replaceIn('{{$randomAlphaNumaric}}')+\" \"+pm.variables.replaceIn('{{$randomInt}}');\r",
+							"pm.environment.set('t_title', title);\r",
+							"\r",
+							"var due_on = null;\r",
+							"pm.environment.set('t_due_on', due_on);\r",
+							"\r",
+							"var status = 'pending';\r",
+							"pm.environment.set('t_status', status);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test('validate todo title', ()=>{\r",
+							"    pm.expect(jsonData.title).to.be.eql(pm.environment.get('t_title'));\r",
+							"    pm.environment.unset('t_title');\r",
+							"});\r",
+							"\r",
+							"pm.test('validate todo due on', ()=>{\r",
+							"    pm.expect(jsonData.due_on).to.be.eql(pm.environment.get('t_due_on'));\r",
+							"    pm.environment.unset('t_due_on');\r",
+							"});\r",
+							"\r",
+							"pm.test('validate todo status', ()=>{\r",
+							"    pm.expect(jsonData.status).to.be.eql(pm.environment.get('t_status'));\r",
+							"    pm.environment.unset('t_status');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gorest_api_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"{{t_title}}\",\r\n    \"deu_on\": \"{{t_due_on}}\",\r\n    \"status\": \"{{t_status}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/users/{{u_id}}/todos",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"users",
+						"{{u_id}}",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list todos for a user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('validate status code', ()=>{\r",
+							"    pm.response.to.have.status(200);\r",
+							"}); \r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"const jsonSchema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"array\",\r",
+							"  \"items\": [\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"user_id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"title\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"due_on\": {\r",
+							"          \"type\": \"null\"\r",
+							"        },\r",
+							"        \"status\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"user_id\",\r",
+							"        \"title\",\r",
+							"        \"due_on\",\r",
+							"        \"status\"\r",
+							"      ]\r",
+							"    }\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.test('validate json schema', ()=>{\r",
+							"    pm.expect(tv4.validate(jsonData, jsonSchema)).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{gorest_api_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/users/{{u_id}}/todos",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"users",
+						"{{u_id}}",
+						"todos"
 					]
 				}
 			},
@@ -174,13 +1320,29 @@
 		},
 		{
 			"name": "delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('validate data status code', ()=>{\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.environment.unset('p_id');\r",
+							"pm.environment.unset('u_id');"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
+							"value": "{{gorest_api_token}}",
 							"type": "string"
 						}
 					]
@@ -201,249 +1363,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://gorest.co.in/public/v2/users/6763564",
-					"protocol": "https",
+					"raw": "{{api_url}}/users/{{u_id}}",
 					"host": [
-						"gorest",
-						"co",
-						"in"
+						"{{api_url}}"
 					],
 					"path": [
-						"public",
-						"v2",
 						"users",
-						"6763564"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "list posts for a user",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://gorest.co.in/public/v2/users/6752491/posts",
-					"protocol": "https",
-					"host": [
-						"gorest",
-						"co",
-						"in"
-					],
-					"path": [
-						"public",
-						"v2",
-						"users",
-						"6752491",
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "list todos for a user",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://gorest.co.in/public/v2/users/6752491/todos",
-					"protocol": "https",
-					"host": [
-						"gorest",
-						"co",
-						"in"
-					],
-					"path": [
-						"public",
-						"v2",
-						"users",
-						"6752491",
-						"todos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "list comments for a post",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://gorest.co.in/public/v2/posts/110264/comments",
-					"protocol": "https",
-					"host": [
-						"gorest",
-						"co",
-						"in"
-					],
-					"path": [
-						"public",
-						"v2",
-						"posts",
-						"110264",
-						"comments"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create post for a user",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"something for an existing user\",\r\n    \"body\": \"many things\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://gorest.co.in/public/v2/users/6752491/posts",
-					"protocol": "https",
-					"host": [
-						"gorest",
-						"co",
-						"in"
-					],
-					"path": [
-						"public",
-						"v2",
-						"users",
-						"6752491",
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create todo for a user",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"home work\",\r\n    \"deu_on\": \"2024-03-27T00:00:00.000+05:30\",\r\n    \"status\": \"pending\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://gorest.co.in/public/v2/users/6752491/todos",
-					"protocol": "https",
-					"host": [
-						"gorest",
-						"co",
-						"in"
-					],
-					"path": [
-						"public",
-						"v2",
-						"users",
-						"6752491",
-						"todos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create comment for a post",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "d69729b59c6ec11d7caf47021ad202a3d9eca6dd8f19291eebad22ad58b75e5a",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"ragna\",\r\n    \"email\": \"nab@g.c\",\r\n    \"body\": \"many things\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://gorest.co.in/public/v2/posts/110264/comments",
-					"protocol": "https",
-					"host": [
-						"gorest",
-						"co",
-						"in"
-					],
-					"path": [
-						"public",
-						"v2",
-						"posts",
-						"110264",
-						"comments"
+						"{{u_id}}"
 					]
 				}
 			},
